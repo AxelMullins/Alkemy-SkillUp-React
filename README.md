@@ -1,8 +1,10 @@
 # Alkemy challenge
 
+- Challenge - The Movies Database
+
 ## API
-- [TheMovieDB - v3]("https://developers.themoviedb.org/3/getting-started/authorization")
-   - [Docs]("https://developers.themoviedb.org/3/getting-started/")
+- [TheMovieDB - v3](https://developers.themoviedb.org/3/getting-started/authorization)
+   - [Docs](https://developers.themoviedb.org/3/getting-started/)
 
 ## Librerías
 
