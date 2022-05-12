@@ -11,13 +11,15 @@ import { useEffect, useState } from "react";
 function App() {
   const [isLogged, setIsLogged] = useState(false)
   const [favoritos, setFavoritos] = useState([]);
+  const [favsInLocal, setFavsInLocal] = useState("")
 
   useEffect(() => {
-    let favsInLocal = localStorage.getItem("favs")
+    setFavsInLocal(localStorage.getItem("favs"))
 
     if (favsInLocal.length === 0) return;
     if (favsInLocal.length >= 1) {
       const favsArray = JSON.parse(favsInLocal);
+      
       setFavoritos(favsArray);
     }
   }, []);
