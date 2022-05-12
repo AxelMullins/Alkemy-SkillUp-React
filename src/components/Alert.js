@@ -1,4 +1,5 @@
 import React from "react";
+import {VscError} from 'react-icons/vsc'
 
 const Alert = ({ errMsg, show, handleShow }) => {
   return (
@@ -19,28 +20,29 @@ const Alert = ({ errMsg, show, handleShow }) => {
           style={{
             background: "white",
             boxShadow: "2px 2px 10px 2px grey",
-            border: "1px solid red",
             padding: "50px",
             borderRadius: "8px",
             position: "fixed",
           }}
         >
-          <div>
-            <h5>{errMsg}</h5>
+          <div style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+            <VscError style={{color: "red", fontSize: "4em"}}/>
+            <h4 style={{color: "red",  padding: "10px"}}>Error</h4>
+            <h5 style={{color: "grey", padding: "10px"}}>{errMsg}</h5>
             <button
               onClick={handleShow}
               style={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
-                background: "transparent",
+                background: "red",
                 border: "none",
+                borderRadius: "4px",
                 fontWeight: "bolder",
-                zIndex: "19",
+                color: "white",
+                cursor: "pointer",
+                marginTop: "10px",
+                padding: "10px"
               }}
             >
-              {" "}
-              X{" "}
+              Volver a intentarlo
             </button>
           </div>
         </div>

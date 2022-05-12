@@ -22,7 +22,7 @@ function App() {
       
       setFavoritos(favsArray);
     }
-  }, []);
+  }, [favsInLocal]);
 
   const addOrRemoveFromFavs = (e) => {
     const favMovies = localStorage.getItem("favs");

@@ -1,6 +1,9 @@
 # Alkemy challenge
 
 - Challenge - The Movies Database
+- Login:
+    `email:` "challenge@alkemy.org"
+    `psw:`   "react"
 
 ## API
 - [TheMovieDB - v3](https://developers.themoviedb.org/3/getting-started/authorization)
