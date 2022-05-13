@@ -11,6 +11,7 @@ const MovieCard = ({ movie, base_url }) => {
         boxShadow: "2px 2px 10px 1px grey",
         borderRadius: "6px",
         position: "relative",
+        maxWidth: "300px"
       }}
     >
       <img

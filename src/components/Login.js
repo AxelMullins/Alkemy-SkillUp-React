@@ -80,6 +80,7 @@ const Login = () => {
               <input
                 type="text"
                 name="email"
+                placeholder="challenge@alkemy.org"
                 id="email"
                 style={{ width: "100%", padding: "6px", borderRadius: "4px" }}
               />
@@ -90,6 +91,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
+                placeholder="react"
                 id="password"
                 style={{ width: "100%", padding: "6px", borderRadius: "4px" }}
               />
