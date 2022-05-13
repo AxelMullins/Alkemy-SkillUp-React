@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FavContext } from "../context/FavContext";
 
-const Header = ({ favoritos, isLogged }) => {
+const Header = () => {
+  const { favoritos, isLogged } = useContext(FavContext);
+  let token = sessionStorage.getItem("token");
 
   return (
     <header
       style={{
         display: "flex",
         justifyContent: "space-between",
-        padding: "0 20px",
+        padding: "0 30px",
         alignItems: "center",
         height: "80px",
         boxShadow: "2px 2px 10px 2px grey",
@@ -20,7 +24,7 @@ const Header = ({ favoritos, isLogged }) => {
           Challenge
         </h3>
       </Link>
-      {!isLogged ? (
+      {!isLogged && !token ? (
         <button
           style={{
             background: "green",
@@ -49,21 +53,26 @@ const Header = ({ favoritos, isLogged }) => {
             }}
           >
             <li>
-              <Link
+              <NavLink
                 to="/movies"
-                style={{ color: "black", textDecoration: "none" }}
+                style={({ isActive }) => ({
+                  color: isActive ? "#447CAD" : "black",
+                  textDecoration: "none",
+                  fontWeight: isActive ? "bold" : "inherit",
+                })}
               >
                 Películas
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/favoritos"
-                style={{
-                  color: "black",
+                style={({ isActive }) => ({
+                  color: isActive ? "#447CAD" : "black",
                   textDecoration: "none",
                   position: "relative",
-                }}
+                  fontWeight: isActive ? "bold" : "inherit",
+                })}
               >
                 Favoritos{" "}
                 {favoritos.length >= 1 && (
@@ -85,7 +94,7 @@ const Header = ({ favoritos, isLogged }) => {
                     {favoritos.length}
                   </span>
                 )}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

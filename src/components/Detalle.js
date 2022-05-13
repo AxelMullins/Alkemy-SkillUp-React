@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import useWindowSize from "../hooks/useWindowSize";
 import Redirect from "./Redirect";
 
@@ -60,7 +60,7 @@ const Detalle = () => {
                   borderRadius: width < 768 ? "6px 6px 0 0" : "6px 0 0 6px",
                   margin: "0 auto",
                   width: "100%",
-                  maxWidth: "400px"
+                  maxWidth: "400px",
                 }}
               />
               <div style={{ padding: "10px 10px 20px 10px", color: "grey" }}>

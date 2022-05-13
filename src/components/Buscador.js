@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
@@ -31,7 +31,12 @@ const Buscador = () => {
       <Alert errMsg={errMsg} show={show} handleShow={handleShow} />
       <form
         onSubmit={submitHandler}
-        style={{ display: "flex", alignItems: "center", width: "80%", margin: "40px auto 20px auto" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          width: "80%",
+          margin: "40px auto 20px auto",
+        }}
       >
         <label htmlFor="search" hidden>
           Buscar
@@ -64,8 +69,8 @@ const Buscador = () => {
             height: "30px",
             display: "flex",
           }}
-          >
-          <span style={{ padding: "0 8px", color: "grey"}}>| </span>
+        >
+          <span style={{ padding: "0 8px", color: "grey" }}>| </span>
           <FaSearch size="16px" color="grey" />
         </button>
       </form>

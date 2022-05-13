@@ -1,9 +1,11 @@
-import axios from "axios";
+import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { FavContext } from "../context/FavContext";
+import axios from "axios";
 import Alert from "./Alert";
-import { useState } from "react";
 
-const Login = ({ setIsLogged }) => {
+const Login = () => {
+  const { setIsLogged } = useContext(FavContext);
   const [show, setShow] = useState("none");
   const [errMsg, setErrMsg] = useState("");
   const handleShow = () => {
@@ -42,8 +44,6 @@ const Login = ({ setIsLogged }) => {
       .post("http://challenge-react.alkemy.org/", { email, password })
       .then((res) => {
         setShow("grid");
-        // setErrMsg("Ingresaste correctamente");
-        // console.log(res.data);
         const tokenRes = res.data.token;
         sessionStorage.setItem("token", tokenRes);
         setIsLogged(true);
