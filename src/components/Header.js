@@ -15,6 +15,10 @@ const Header = () => {
         alignItems: "center",
         height: "80px",
         boxShadow: "2px 2px 10px 2px grey",
+        position: "sticky",
+        top: "0",
+        zIndex: 99,
+        background: "white",
       }}
     >
       <Link to="/" style={{ color: "black", textDecoration: "none" }}>

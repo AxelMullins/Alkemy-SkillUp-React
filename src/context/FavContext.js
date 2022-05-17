@@ -8,7 +8,7 @@ const FavProvider = ({ children }) => {
   const [favsInLocal, setFavsInLocal] = useState("");
 
   useEffect(() => {
-    setFavsInLocal(localStorage.getItem("favs"));
+    if (favsInLocal) setFavsInLocal(localStorage.getItem("favs"));
 
     if (favsInLocal.length === 0) return;
     if (favsInLocal.length >= 1) {
